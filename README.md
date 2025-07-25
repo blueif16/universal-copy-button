@@ -7,6 +7,12 @@
 ![TypeScript](https://img.shields.io/badge/typescript-supported-blue)
 ![License](https://img.shields.io/badge/license-MIT-green)
 
+## 🌟 在线演示
+
+**[👉 查看完整演示网站](https://blueif16.github.io/universal-copy-button)**
+
+体验所有功能，包括不同样式、实时统计和交互演示！
+
 ## ✨ 特性
 
 - 🎨 **多种视觉样式**: Glass、Tech、Minimal、Floating四种精美样式
@@ -279,4 +285,4 @@ MIT License - 详见 [LICENSE](LICENSE) 文件
 
 如果你觉得这个项目有用，请给一个⭐️！
 
-有问题？[提交Issue](https://github.com/your-username/universal-copy-button/issues) 
+有问题？[提交Issue](https://github.com/blueif16/universal-copy-button/issues) 
