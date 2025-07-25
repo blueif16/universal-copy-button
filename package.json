@@ -1,6 +1,6 @@
 {
   "name": "universal-copy-button",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "优雅的React复制按钮组件，支持多种样式和自适应设计",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
@@ -17,11 +17,11 @@
     "ui",
     "typescript"
   ],
-  "author": "Your Name",
+  "author": "Shiran Wang",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/your-username/universal-copy-button.git"
+    "url": "git+https://github.com/shiranwang/universal-copy-button.git"
   },
   "peerDependencies": {
     "react": ">=16.8.0",

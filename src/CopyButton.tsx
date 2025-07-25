@@ -7,7 +7,12 @@ const UNIVERSAL_COPY_SELECTOR = '[copy]';
 const UNIVERSAL_EXCLUDE_ATTRIBUTE = 'no-copy';
 
 // Context for app-wide configuration (optional)
-const CopyContext = createContext({
+const CopyContext = createContext<{
+  defaultFormat?: 'text' | 'markdown' | 'html';
+  defaultSeparator?: string;
+  onCopySuccess?: (text: string) => void;
+  onCopyError?: (error: Error) => void;
+}>({
   defaultFormat: 'text',
   defaultSeparator: '\n\n',
   onCopySuccess: () => {},
@@ -31,14 +36,14 @@ const isElementVisible = (el: Element): boolean => {
 };
 
 const debounce = (func: (...args: any[]) => void, wait: number) => {
-  let timeout: NodeJS.Timeout;
+  let timeout: number;
   return function executedFunction(...args: any[]) {
     const later = () => {
       clearTimeout(timeout);
       func(...args);
     };
     clearTimeout(timeout);
-    timeout = setTimeout(later, wait);
+    timeout = setTimeout(later, wait) as unknown as number;
   };
 };
 
@@ -56,7 +61,8 @@ const getTextContent = (element: Element): string => {
   
   // Process children
   let text = '';
-  for (const node of element.childNodes) {
+  const nodes = Array.from(element.childNodes);
+  for (const node of nodes) {
     if (node.nodeType === Node.TEXT_NODE) {
       text += node.textContent || '';
     } else if (node.nodeType === Node.ELEMENT_NODE) {
@@ -440,7 +446,7 @@ export const CopyButton: React.FC<CopyButtonProps> = ({
       {/* Button content */}
       <span className="relative z-10 flex items-center">
         {iconOnly ? (
-          <span aria-label={labels[copyState]}>{icons[copyState]}</span>
+          <span aria-label={labels[copyState] as string}>{icons[copyState]}</span>
         ) : (
           <>
             <span className="mr-2 transition-all duration-300">
