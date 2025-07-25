@@ -1,0 +1,11 @@
+src/
+*.tsx
+*.md
+!README.md
+tsconfig.json
+rollup.config.js
+.gitignore
+button-adaptation-demo.tsx
+copy-behavior-guide.md
+elegant-button-showcase.md
+universal-copy-standard.md 
